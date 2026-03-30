@@ -1,0 +1,28 @@
+{
+  "teams": [
+    { "nhl_team_code": "DAL", "name": "Dallas Stars", "city": "Dallas", "abbreviation": "DAL", "conference": "Western", "division": "Central", "is_active": true },
+    { "nhl_team_code": "COL", "name": "Colorado Avalanche", "city": "Colorado", "abbreviation": "COL", "conference": "Western", "division": "Central", "is_active": true },
+    { "nhl_team_code": "WPG", "name": "Winnipeg Jets", "city": "Winnipeg", "abbreviation": "WPG", "conference": "Western", "division": "Central", "is_active": true },
+    { "nhl_team_code": "VGK", "name": "Vegas Golden Knights", "city": "Vegas", "abbreviation": "VGK", "conference": "Western", "division": "Pacific", "is_active": true },
+    { "nhl_team_code": "EDM", "name": "Edmonton Oilers", "city": "Edmonton", "abbreviation": "EDM", "conference": "Western", "division": "Pacific", "is_active": true },
+    { "nhl_team_code": "MIN", "name": "Minnesota Wild", "city": "Minnesota", "abbreviation": "MIN", "conference": "Western", "division": "Central", "is_active": true }
+  ],
+  "games": [
+    { "external_game_id": "2026-001", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-01T01:00:00Z", "home_team": "DAL", "away_team": "WPG", "venue_name": "American Airlines Center", "status": "final", "home_score": 4, "away_score": 2 },
+    { "external_game_id": "2026-002", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-03T02:00:00Z", "home_team": "COL", "away_team": "MIN", "venue_name": "Ball Arena", "status": "final", "home_score": 3, "away_score": 2 },
+    { "external_game_id": "2026-003", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-05T03:00:00Z", "home_team": "VGK", "away_team": "EDM", "venue_name": "T-Mobile Arena", "status": "final", "home_score": 2, "away_score": 5 },
+    { "external_game_id": "2026-004", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-07T01:00:00Z", "home_team": "DAL", "away_team": "COL", "venue_name": "American Airlines Center", "status": "final", "home_score": 3, "away_score": 1 },
+    { "external_game_id": "2026-005", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-09T01:30:00Z", "home_team": "MIN", "away_team": "WPG", "venue_name": "Xcel Energy Center", "status": "final", "home_score": 1, "away_score": 4 },
+    { "external_game_id": "2026-006", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-11T02:00:00Z", "home_team": "EDM", "away_team": "DAL", "venue_name": "Rogers Place", "status": "final", "home_score": 2, "away_score": 4 },
+    { "external_game_id": "2026-007", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-14T03:00:00Z", "home_team": "VGK", "away_team": "COL", "venue_name": "T-Mobile Arena", "status": "final", "home_score": 4, "away_score": 3 },
+    { "external_game_id": "2026-008", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-16T01:00:00Z", "home_team": "DAL", "away_team": "MIN", "venue_name": "American Airlines Center", "status": "final", "home_score": 5, "away_score": 2 },
+    { "external_game_id": "2026-009", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-18T02:00:00Z", "home_team": "COL", "away_team": "EDM", "venue_name": "Ball Arena", "status": "final", "home_score": 2, "away_score": 4 },
+    { "external_game_id": "2026-010", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-20T01:00:00Z", "home_team": "WPG", "away_team": "DAL", "venue_name": "Canada Life Centre", "status": "final", "home_score": 1, "away_score": 2 },
+    { "external_game_id": "2026-011", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-22T03:00:00Z", "home_team": "VGK", "away_team": "MIN", "venue_name": "T-Mobile Arena", "status": "final", "home_score": 3, "away_score": 1 },
+    { "external_game_id": "2026-012", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-24T02:00:00Z", "home_team": "DAL", "away_team": "VGK", "venue_name": "American Airlines Center", "status": "final", "home_score": 2, "away_score": 3 },
+    { "external_game_id": "2026-013", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-26T02:00:00Z", "home_team": "COL", "away_team": "WPG", "venue_name": "Ball Arena", "status": "final", "home_score": 4, "away_score": 1 },
+    { "external_game_id": "2026-014", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-28T01:30:00Z", "home_team": "EDM", "away_team": "VGK", "venue_name": "Rogers Place", "status": "final", "home_score": 5, "away_score": 4 },
+    { "external_game_id": "2026-015", "season": 2025, "season_type": "regular", "start_time_utc": "2026-03-31T01:00:00Z", "home_team": "DAL", "away_team": "COL", "venue_name": "American Airlines Center", "status": "scheduled" },
+    { "external_game_id": "2026-016", "season": 2025, "season_type": "regular", "start_time_utc": "2026-04-02T02:00:00Z", "home_team": "EDM", "away_team": "DAL", "venue_name": "Rogers Place", "status": "scheduled" }
+  ]
+}

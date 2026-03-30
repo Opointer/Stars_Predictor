@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply min-h-screen bg-ice text-ink antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(111, 211, 165, 0.35), transparent 24rem),
+    linear-gradient(180deg, #f6fbff 0%, #ecf5fb 100%);
+}
+
+a {
+  @apply text-inherit no-underline;
+}
+
+::selection {
+  @apply bg-stars-green text-white;
+}

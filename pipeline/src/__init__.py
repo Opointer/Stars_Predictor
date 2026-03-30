@@ -1,0 +1,1 @@
+"""Stars Predictor pipeline package."""
