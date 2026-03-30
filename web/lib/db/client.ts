@@ -11,7 +11,7 @@ export function getDb() {
   const url = process.env.DATABASE_URL;
 
   if (!url) {
-    throw new Error("DATABASE_URL is not set. Run the pipeline seed job before starting the web app.");
+    throw new Error("DATABASE_URL is not set. Run the pipeline before starting the web app.");
   }
 
   const client =

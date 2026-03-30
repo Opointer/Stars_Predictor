@@ -15,12 +15,14 @@ export function MetricBar({
   const accent = inverse ? "bg-caution" : "bg-stars-green";
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between text-sm text-slate-700">
-        <span>{label}</span>
-        <span className="font-semibold">{max === 1 ? formatPercent(value, 1) : value.toFixed(3)}</span>
+    <div className="space-y-3">
+      <div className="flex items-end justify-between gap-4">
+        <span className="text-sm uppercase tracking-[0.2em] text-slate-400">{label}</span>
+        <span className="font-display text-3xl font-semibold leading-none text-white">
+          {max === 1 ? formatPercent(value, 1) : value.toFixed(3)}
+        </span>
       </div>
-      <div className="h-3 rounded-full bg-slate-200">
+      <div className="h-3 rounded-full bg-white/8">
         <div className={`h-3 rounded-full ${accent}`} style={{ width: `${width}%` }} />
       </div>
     </div>

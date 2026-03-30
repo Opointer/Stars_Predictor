@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from typing import Any
 
 from psycopg import Connection
 
 from src.db.schema_sql import DDL, RESET_SQL
-from src.ingestion.seed_loader import SeedData, parse_timestamp
 
 
 def initialize_schema(connection: Connection) -> None:
@@ -20,11 +20,11 @@ def reset_database(connection: Connection) -> None:
     connection.commit()
 
 
-def seed_base_tables(connection: Connection, seed_data: SeedData) -> None:
+def load_base_tables(connection: Connection, teams_payload: list[dict[str, Any]], games_payload: list[dict[str, Any]]) -> None:
     team_id_by_code: dict[str, int] = {}
 
     with connection.cursor() as cursor:
-        for team in seed_data.teams:
+        for team in teams_payload:
             cursor.execute(
                 """
                 INSERT INTO teams (nhl_team_code, name, city, abbreviation, conference, division, is_active)
@@ -35,15 +35,16 @@ def seed_base_tables(connection: Connection, seed_data: SeedData) -> None:
             )
             team_id_by_code[team["abbreviation"]] = cursor.fetchone()["id"]
 
-        for game in seed_data.games:
-            start_time = parse_timestamp(game["start_time_utc"])
+        for game in games_payload:
+            start_time = game["start_time_utc"]
             home_team_id = team_id_by_code[game["home_team"]]
             away_team_id = team_id_by_code[game["away_team"]]
             home_score = game.get("home_score")
             away_score = game.get("away_score")
             winner_team_id = None
-            if home_score is not None and away_score is not None:
-                winner_team_id = home_team_id if home_score > away_score else away_team_id
+            winner_team = game.get("winner_team")
+            if winner_team:
+                winner_team_id = team_id_by_code[winner_team]
 
             cursor.execute(
                 """
@@ -82,7 +83,7 @@ def seed_base_tables(connection: Connection, seed_data: SeedData) -> None:
                     "external_game_id": game["external_game_id"],
                     "season": game["season"],
                     "season_type": game["season_type"],
-                    "game_date": start_time,
+                    "game_date": game.get("game_date", start_time),
                     "start_time_utc": start_time,
                     "home_team_id": home_team_id,
                     "away_team_id": away_team_id,
@@ -91,7 +92,7 @@ def seed_base_tables(connection: Connection, seed_data: SeedData) -> None:
                     "home_score": home_score,
                     "away_score": away_score,
                     "winner_team_id": winner_team_id,
-                    "is_stars_game": game["home_team"] == "DAL" or game["away_team"] == "DAL",
+                    "is_stars_game": game["is_stars_game"],
                 },
             )
 
@@ -107,7 +108,7 @@ def create_model_run(connection: Connection, model_version: str, run_type: str =
             VALUES (%s, %s, %s, 'running', %s)
             RETURNING id
             """,
-            (model_version, run_type, now, "Seeded baseline pipeline execution"),
+            (model_version, run_type, now, "NHL public API pipeline execution"),
         )
         model_run_id = cursor.fetchone()["id"]
     connection.commit()

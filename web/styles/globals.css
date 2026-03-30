@@ -6,11 +6,17 @@
   color-scheme: dark;
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
-  @apply min-h-screen bg-ice text-ink antialiased;
+  @apply min-h-screen bg-night font-sans text-slate-100 antialiased;
   background-image:
-    radial-gradient(circle at top left, rgba(111, 211, 165, 0.35), transparent 24rem),
-    linear-gradient(180deg, #f6fbff 0%, #ecf5fb 100%);
+    radial-gradient(circle at top left, rgba(111, 211, 165, 0.18), transparent 24rem),
+    radial-gradient(circle at top right, rgba(31, 90, 128, 0.22), transparent 30rem),
+    linear-gradient(180deg, #040b13 0%, #091423 38%, #0b1727 100%);
+  background-attachment: fixed;
 }
 
 a {
@@ -19,4 +25,16 @@ a {
 
 ::selection {
   @apply bg-stars-green text-white;
+}
+
+.app-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-position: center;
+  background-size: 72px 72px;
+}
+
+.panel-surface {
+  @apply border border-white/10 bg-white/[0.04] shadow-panel backdrop-blur-xl;
 }

@@ -1,8 +1,8 @@
 export function SetupNotice({ message }: { message: string }) {
   return (
-    <div className="rounded-[1.5rem] border border-danger/20 bg-white p-6 shadow-panel">
-      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-danger">Setup required</p>
-      <p className="mt-2 text-sm text-slate-700">{message}</p>
+    <div className="panel-surface rounded-[1.75rem] border-danger/20 bg-danger/5 p-6">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-danger">Setup required</p>
+      <p className="mt-3 text-sm leading-6 text-slate-200">{message}</p>
     </div>
   );
 }

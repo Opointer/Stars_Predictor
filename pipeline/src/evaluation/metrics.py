@@ -56,12 +56,12 @@ def write_metrics(connection: Connection, model_run_id: int, model_version: str)
             (
                 model_run_id,
                 model_version,
-                "Seeded March 2026 sample",
+                "Rolling recent NHL completed games",
                 games_evaluated,
                 accuracy,
                 brier_score,
                 log_loss,
-                "Baseline probabilities are seeded from recent-form features and a fixed home-ice prior.",
+                "Baseline probabilities are generated from recent-form features and a fixed home-ice prior.",
                 datetime.now(tz=timezone.utc),
             ),
         )
