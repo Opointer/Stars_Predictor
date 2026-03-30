@@ -57,6 +57,18 @@ CREATE TABLE IF NOT EXISTS games (
     is_stars_game BOOLEAN NOT NULL DEFAULT FALSE
 );
 
+CREATE INDEX IF NOT EXISTS idx_games_status_start_time
+    ON games (status, start_time_utc);
+
+CREATE INDEX IF NOT EXISTS idx_games_home_team_start_time
+    ON games (home_team_id, start_time_utc);
+
+CREATE INDEX IF NOT EXISTS idx_games_away_team_start_time
+    ON games (away_team_id, start_time_utc);
+
+CREATE INDEX IF NOT EXISTS idx_games_stars_game_start_time
+    ON games (is_stars_game, start_time_utc);
+
 CREATE TABLE IF NOT EXISTS team_game_stats (
     id SERIAL PRIMARY KEY,
     game_id INTEGER NOT NULL REFERENCES games(id),
