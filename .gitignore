@@ -1,0 +1,22 @@
+# Node / Next.js
+node_modules/
+.next/
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Environment variables
+.env
+
+# Data files
+data/*.csv
+data/*.json
+
+# OS junk
+.DS_Store
+Thumbs.db
